@@ -11,9 +11,11 @@ for (const name of ["increaseFontSize","decreaseFontSize"]) {
   elem = document.getElementById(name);
   elem.addEventListener("click", async (e) => {
     console.log(1);
-    fun[name]();
-    let [tab] = await browser.tabs.query({ active: true, currentWindow: true });
-    browser.scripting.executeScript({
+    // fun[name]();
+    document.body.innerHTML += '<div>'+1+'</div>';
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    document.body.innerHTML += '<div>'+tab+'</div>';
+    chrome.scripting.executeScript({
       target: { tabId: tab.id },
       function: fun[name],
     }); // end addEventListener
