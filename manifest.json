@@ -11,5 +11,13 @@
       "matches": ["<all_urls>"],
       "js": ["filter.js"]
     }
-  ]
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Accessability",
+    "default_popup": "table.html"
+  }
 }
